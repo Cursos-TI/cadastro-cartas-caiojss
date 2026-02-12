@@ -7,8 +7,8 @@ int main() {
 	setlocale(LC_ALL, "Portuguese");
 	// Para localidade em português para mostrar os acentos das palavras
 	
-    char estado1;
-    char cCarta1[4];
+  char estado1;
+  char cCarta1[4];
 	char cidade1[30];
 	int populacao1;
 	float area1;
@@ -17,7 +17,7 @@ int main() {
 	//Acima as variáveis para a Carta 1
 	
 	char estado2;
-    char cCarta2[4];
+  char cCarta2[4];
 	char cidade2[20];
 	int populacao2;
 	float area2;
