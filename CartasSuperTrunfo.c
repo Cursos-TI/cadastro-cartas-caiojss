@@ -14,6 +14,8 @@ int main() {
 	float area1;
 	float pib1;
 	int nPTuristico1;
+	float dPopulacional1;
+	float pPerCapita1;
 	//Acima as variáveis para a Carta 1
 	
 	char estado2;
@@ -23,6 +25,8 @@ int main() {
 	float area2;
 	float pib2;
 	int nPTuristico2;
+	float dPopulacional2;
+	float pPerCapita2;
 	//Acima as variáveis para a Carta 2
 	
 	
@@ -55,6 +59,13 @@ int main() {
 	scanf(" %d", &nPTuristico1);
 	//Acima deve ser a quantidadede pontos turistico com numero inteiro %d
 	printf("\n");
+
+	dPopulacional1 = (float)populacao1 / area1;
+	//Aqui foi colocado o float na população para vir o resultado em float, ela foi declarada como int lá em cima por isso foi colocado assim
+	pPerCapita1 = (pib1 * 1000000000) / populacao1;
+	//Como o PIB é por bilhão multipliquei por esse numero para mostrar o resultado corretamente ao inves de ser zerado igual estava mostrando antes
+	//Acima será calculado a Densidade Populacional e o PIB per Capita da Carta 1
+
 	//Apenas para pular uma linha para começar a inserir os dados da segunda carta
 	printf("Agora vamos inserir os dados da segunda carta\n");
 	printf("Insira a letra de um estado de A a H: ");
@@ -74,6 +85,13 @@ int main() {
 	printf("Insira a quantidade de pontos turísticos da cidade: ");
 	scanf(" %d", &nPTuristico2);
 	printf("\n");
+
+	dPopulacional2 = (float)populacao2 / area2;
+
+	pPerCapita2 = (pib2 * 1000000000) / populacao2;
+
+	//Acima será calculado a Densidade Populacional e o PIB per Capita da Carta 2
+
 	//Espaço para pular e começar a mostrar na tela os valores inseridos
 	printf("Aqui estão os valores inseridos das respectivas cartas\n");
 	printf("Carta 1:\n");
@@ -83,7 +101,10 @@ int main() {
 	printf("População: %d\n", populacao1);
 	printf("Área: %.2f km²\n", area1);
 	printf("PIB: %.2f bilhões de reais\n", pib1);
-	printf("Número de Pontos Turísticos: %d", nPTuristico1);
+	printf("Número de Pontos Turísticos: %d\n", nPTuristico1);
+	//Inserindo dados do nivel aventureiro da carta 1
+	printf("Densidade Populacional: %.2f hab/km²\n", dPopulacional1);
+	printf("PIB per Capita: %.2f reais", pPerCapita1);
 	printf("\n");
 	printf("Carta 2:\n");
 	printf("Estado: %c\n", estado2);
@@ -93,7 +114,10 @@ int main() {
 	printf("Área: %.2f km²\n", area2);
 	printf("PIB: %.2f bilhões de reais\n", pib2);
 	//Area e PIB decidi colocar .2f para que seja mais facil de visualizar os valores
-	printf("Número de Pontos Turísticos: %d", nPTuristico2);
+	printf("Número de Pontos Turísticos: %d\n", nPTuristico2);
+	//Inserindo dados do nivel aventureiro da carta 2
+	printf("Densidade Populacional: %.2f hab/km²\n", dPopulacional2);
+	printf("PIB per Capita: %.2f reais", pPerCapita2);
 	
 	
 	return 0;
