@@ -33,7 +33,7 @@ int main() {
 	//Acima começaremos a inserir a letra do estado
 	//%c indica ser um unico caractere e em seguida há o "&" que vai gravar o dado na variavel estado
 	printf("Insira o numero da carta de 01 a 04 junto da letra do estado já inserida: ");
-	scanf(" %s", &cCarta1);
+	scanf(" %s", cCarta1);
 	//Acima será o codigo da carta que deve ser inserido entre 01 a 04
 	//%s indica ser uma string pois precisará colocar tanto letra quanto numero junto
 	getchar();
@@ -60,7 +60,7 @@ int main() {
 	printf("Insira a letra de um estado de A a H: ");
 	scanf(" %c", &estado2);
 	printf("Insira o numero da carta de 01 a 04 junto da letra do estado já inserida: ");
-	scanf(" %s", &cCarta2);
+	scanf(" %s", cCarta2);
 	getchar();
 	printf("Insira o nome da cidade: ");
 	fgets(cidade2, 30, stdin);
