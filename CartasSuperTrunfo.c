@@ -7,26 +7,28 @@ int main() {
 	setlocale(LC_ALL, "Portuguese");
 	// Para localidade em português para mostrar os acentos das palavras
 	
-  char estado1;
-  char cCarta1[4];
+  	char estado1;
+  	char cCarta1[4];
 	char cidade1[30];
-	int populacao1;
+	unsigned long int populacao1;
 	float area1;
 	float pib1;
 	int nPTuristico1;
 	float dPopulacional1;
 	float pPerCapita1;
+	float super_poder1;
 	//Acima as variáveis para a Carta 1
 	
 	char estado2;
-  char cCarta2[4];
-	char cidade2[20];
-	int populacao2;
+  	char cCarta2[4];
+	char cidade2[30];
+	unsigned long int populacao2;
 	float area2;
 	float pib2;
 	int nPTuristico2;
 	float dPopulacional2;
 	float pPerCapita2;
+	float super_poder2;
 	//Acima as variáveis para a Carta 2
 	
 	
@@ -65,6 +67,8 @@ int main() {
 	pPerCapita1 = (pib1 * 1000000000) / populacao1;
 	//Como o PIB é por bilhão multipliquei por esse numero para mostrar o resultado corretamente ao inves de ser zerado igual estava mostrando antes
 	//Acima será calculado a Densidade Populacional e o PIB per Capita da Carta 1
+	super_poder1 = (float)populacao1 + area1 + pib1 + (float)nPTuristico1 + pPerCapita1 + (1.0f / dPopulacional1);
+	//Acima é calculado o super poder da carta 1
 
 	//Apenas para pular uma linha para começar a inserir os dados da segunda carta
 	printf("Agora vamos inserir os dados da segunda carta\n");
@@ -92,6 +96,9 @@ int main() {
 
 	//Acima será calculado a Densidade Populacional e o PIB per Capita da Carta 2
 
+	super_poder2 = (float)populacao2 + area2 + pib2 + (float)nPTuristico2 + pPerCapita2 + (1.0f / dPopulacional2);
+	//Acima é calculado o super poder da carta 2
+
 	//Espaço para pular e começar a mostrar na tela os valores inseridos
 	printf("Aqui estão os valores inseridos das respectivas cartas\n");
 	printf("Carta 1:\n");
@@ -103,8 +110,8 @@ int main() {
 	printf("PIB: %.2f bilhões de reais\n", pib1);
 	printf("Número de Pontos Turísticos: %d\n", nPTuristico1);
 	//Inserindo dados do nivel aventureiro da carta 1
-	printf("Densidade Populacional: %.2f hab/km²\n", dPopulacional1);
-	printf("PIB per Capita: %.2f reais", pPerCapita1);
+	printf("Densidade Populacional: %f hab/km²\n", dPopulacional1);
+	printf("PIB per Capita: %f reais", pPerCapita1);
 	printf("\n");
 	printf("Carta 2:\n");
 	printf("Estado: %c\n", estado2);
@@ -116,9 +123,19 @@ int main() {
 	//Area e PIB decidi colocar .2f para que seja mais facil de visualizar os valores
 	printf("Número de Pontos Turísticos: %d\n", nPTuristico2);
 	//Inserindo dados do nivel aventureiro da carta 2
-	printf("Densidade Populacional: %.2f hab/km²\n", dPopulacional2);
-	printf("PIB per Capita: %.2f reais", pPerCapita2);
-	
+	printf("Densidade Populacional: %f hab/km²\n", dPopulacional2);
+	printf("PIB per Capita: %f reais\n", pPerCapita2);
+
+	printf("Segue o resultado da comparação das cartas! (Resultado 1 = Carta 1 venceu, caso o resultado seja 0 o vencedor é a Carta 2\n");
+	printf("População: %d venceu\n", populacao1 > populacao2);
+	printf("Área: %d\n", area1 > area2);
+	printf("PIB: %d\n", pib1 > pib2);
+	printf("Pontos Turísticos: %d\n", nPTuristico1 > nPTuristico2);
+	printf("Densidade Populacional: %d\n", dPopulacional1 < dPopulacional2);
+	//Acima é utilizado ao contrario na densidade populacional pois o que tiver menor valor vence
+	printf("PIB Per Capita: %d\n", pPerCapita1 > pPerCapita2);
+	printf("Super Poder: %d\n", super_poder1 > super_poder2);
+	printf("Desafio MESTRE Concluido!\n");
 	
 	return 0;
 	
